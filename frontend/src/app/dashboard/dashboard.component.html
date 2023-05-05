@@ -9,3 +9,6 @@
     </mat-toolbar-row>
   </mat-toolbar>
 </p>
+<div *ngFor="let column of columns">
+  <app-column [title]="column.title" [tickets]="column.tickets"></app-column>
+</div>

@@ -1,3 +1,20 @@
 .spacer {
   flex: 1 1 auto;
 }
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 32px;
+  padding: 16px;
+}
+
+.column-title{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.column{
+  background-color: #f2f2f2;
+  border-radius: 20px;
+}
