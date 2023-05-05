@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 
-export class DashboardComponent {}
+export class DashboardComponent {
+  columns = ['To Do', 'In Progress', 'In Testing', 'Done'];
+}

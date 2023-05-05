@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ColumnComponent } from './column/column.component';
+import { TicketCardComponent } from './ticket-card/ticket-card.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ColumnComponent,
+    TicketCardComponent,
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
   ],
   exports: [
-    CommonModule
+    CommonModule,
+    ColumnComponent
   ]
 })
 
