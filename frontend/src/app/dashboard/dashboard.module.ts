@@ -7,6 +7,11 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [DashboardComponent],
-  imports: [SharedModule, MatToolbarModule, MatIconModule, MatButtonModule],
+  imports: [
+    SharedModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
+],
 })
 export class DashboardModule {}

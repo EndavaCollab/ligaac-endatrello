@@ -10,8 +10,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     DashboardModule,
   ],
   providers: [],
