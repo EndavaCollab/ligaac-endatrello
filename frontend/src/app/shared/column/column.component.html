@@ -1,4 +1,7 @@
-<div>
-    <p class=""></p>
-    
+<div class="column">
+  <p class="column-title">{{ title }}</p>
+  <app-ticket-card
+    *ngFor="let ticket of tickets"
+    [ticket]="ticket"
+  ></app-ticket-card>
 </div>

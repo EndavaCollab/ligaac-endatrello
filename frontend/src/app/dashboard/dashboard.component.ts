@@ -1,27 +1,28 @@
 import { Component } from '@angular/core';
+import { IColumn } from '../shared';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  columns = [
+  columns: IColumn[] = [
     {
       title: 'To do',
-      tickets: ['TicketA', 'TicketB']
+      tickets: [{ name: 'TicketA' }, { name: 'TicketB' }],
     },
     {
       title: 'In progress',
-      tickets: ['TicketA', 'TicketB']
+      tickets: [],
     },
     {
       title: 'In testing',
-      tickets: ['TicketA', 'TicketB']
+      tickets: [],
     },
     {
       title: 'Done',
-      tickets: ['TicketA', 'TicketB']
+      tickets: [],
     },
-]
+  ];
 }
