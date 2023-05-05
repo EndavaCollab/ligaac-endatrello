@@ -1,6 +1,6 @@
-import { ITicket } from "./ITicket";
+import { ITicket } from './ITicket';
 
 export interface IColumn {
-    title: string,
-    tickets: ITicket[],
+  title: string;
+  tickets: ITicket[];
 }

@@ -1,3 +1,3 @@
 export interface ITicket {
-    name: string,
+  name: string;
 }

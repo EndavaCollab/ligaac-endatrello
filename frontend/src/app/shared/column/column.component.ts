@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { ITicket } from '../interfaces/ITicket';
+import { ITicket } from '../interfaces';
 
 @Component({
   selector: 'app-column',
   templateUrl: './column.component.html',
-  styleUrls: ['./column.component.scss']
+  styleUrls: ['./column.component.scss'],
 })
 export class ColumnComponent {
   @Input() title: string = '';
