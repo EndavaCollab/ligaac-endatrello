@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ITicket } from '../interfaces';
 
 @Component({
   selector: 'app-column',
@@ -7,5 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ColumnComponent {
   @Input() title: string = '';
-  @Input() tickets: any;
+  @Input() tickets: ITicket[] = [];
 }
