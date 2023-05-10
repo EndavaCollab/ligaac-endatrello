@@ -8,4 +8,8 @@ import { ITicket } from '../interfaces';
 })
 export class TicketCardComponent {
   @Input() ticket: ITicket = { name: '' };
+
+  onEdit() {
+    console.log('Edit button');
+  }
 }
