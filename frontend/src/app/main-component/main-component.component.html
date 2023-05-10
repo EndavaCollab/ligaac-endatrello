@@ -1,0 +1,18 @@
+<div id="dashboard">
+    <div id="state-container" *ngFor="let state of myStates" >
+        <h3>{{state.title}}</h3>
+        <div id="state" *ngFor="let task of state.tasks">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <span>{{task.title}}</span>
+                </mat-card-header>
+                <mat-card-actions>
+                    <p>{{task.descriere}}</p>
+                    <button id="edit-button" mat-button>Edit</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</div>   
+
+

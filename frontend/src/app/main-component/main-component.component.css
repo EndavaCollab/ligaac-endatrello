@@ -1,0 +1,22 @@
+#dashboard{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#state-container{
+    background-color: rgb(237, 236, 236);
+    margin: 7px;
+    padding: 3px;
+    border-radius: 12px;
+}
+
+#state{
+    margin: 15px;
+    border-radius: 5px;
+
+}
+
+#edit-button{
+    margin: 5px;
+}
