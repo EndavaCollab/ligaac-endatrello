@@ -1,11 +1,16 @@
 <p>
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <span>My App</span>
+      <span>Endatrello</span>
       <span class="spacer"></span>
       <button mat-icon-button aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
+        <mat-icon>add</mat-icon>
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
 </p>
+<div class="container">
+  <div *ngFor="let column of columns">
+    <app-column [title]="column.title" [tickets]="column.tickets"></app-column>
+  </div>
+</div>
