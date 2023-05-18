@@ -31,8 +31,14 @@ app.use((res, req, next) => {
 
 databaseCondig.connect();
 
+const ticketRoute = require("./tickets/route");
+app.use("/tickets", ticketRoute);
+
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  let nameParam = req.query.name;
+
+  console.log(nameParam);
+  res.send("Hello World! Welcome to our page, " + nameParam);
 });
 
 app.listen(2323, () => {
