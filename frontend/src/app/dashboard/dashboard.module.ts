@@ -7,3 +7,9 @@ import { SharedModule } from '../shared';
   imports: [SharedModule],
 })
 export class DashboardModule {}
+
+@NgModule({
+  declarations: [DashboardComponent],
+  imports: [SharedModule],
+})
+export class DashboardModule {}

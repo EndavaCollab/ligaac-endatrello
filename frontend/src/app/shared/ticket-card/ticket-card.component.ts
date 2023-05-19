@@ -13,3 +13,8 @@ export class TicketCardComponent {
     console.log('edit button');
   }
 }
+
+  onEdit() {
+    console.log('edit button');
+  }
+}

@@ -4,3 +4,8 @@ export interface IColumn {
   title: string;
   tickets: ITicket[];
 }
+
+export interface IColumn {
+  title: string;
+  tickets: ITicket[];
+}

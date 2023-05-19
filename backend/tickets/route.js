@@ -1,18 +1,19 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const controller = require('./controller');
+const controller = require("./controller");
 
+router.get("/", controller.getAllTickets);
 
-router.get('/', controller.getAllTickets);
+router.post("/", controller.addTicket);
 
-router.post('/', controller.addTicket);
+router.delete("/:id", controller.deleteTicket);
 
-router.delete('/:id', controller.deleteTicket);
+router.put("/:id", controller.updateTicket);
 
-router.put('/:id', controller.updateTicket);
+router.patch("/id:", controller.patchTicket);
 
-router.patch('/:id', controller.patchTicket);
+router.get("/get-by-id/:id", controller.getById);
 
-router.get('/get-by-id/:id', controller.getById);
+module.exports = router;
 
 module.exports = router;
