@@ -1,25 +1,27 @@
 const mongoose = require("mongoose");
 
-const Ticket = require("./model/ticketModel");
+const ticketModel = require("./model/ticket.model");
 
 exports.getAllTickets = (req, res, next) => {
   res.send("Get Method for Tickets");
 };
 
 exports.getById = (req, res, next) => {
-  res.send("Get By Id Method for Tickets");
+  res.send("Get By Id Method for Ticket");
 };
 
 exports.addTicket = async (req, res, next) => {
   let body = req.body;
+
   console.log(body);
 
-  const newTicket = new Ticket({
+  const ticket = new ticketModel({
     _id: new mongoose.Types.ObjectId(),
     title: body.title,
     description: body.description,
   });
-  await newTicket.save();
+
+  await ticket.save();
 
   res.send("Add Method for Ticket");
 };
