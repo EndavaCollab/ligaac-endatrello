@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
   console.log(nameParam);
   console.log(emailParam);
 
-  res.send("Hey, " + nameParam);
+  res.send("Hey, " + nameParam + " -> " + emailParam);
 });
 
 app.listen(2323, () => {
