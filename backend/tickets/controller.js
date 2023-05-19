@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const ticketModel = require("./model/ticket.model");
 
-exports.getAllTickets = (req, res, next) => {
+exports.getAllTickets = async (req, res, next) => {
   ticketModel.find().then(
     (results) => {
       res.send({
@@ -14,7 +14,7 @@ exports.getAllTickets = (req, res, next) => {
     (error) => {
       res.send({
         status: 500,
-        message: "Something went wrong",
+        message: "Something went wrong!",
         data: error,
       });
     }
@@ -30,13 +30,13 @@ exports.getById = (req, res, next) => {
       if (result) {
         res.send({
           status: 200,
-          message: "Get ticket with success",
+          message: "Get ticket with success!",
           data: result,
         });
       } else {
         res.send({
           status: 404,
-          message: "Ticket not found",
+          message: "Ticket not found!",
           data: null,
         });
       }
@@ -44,14 +44,14 @@ exports.getById = (req, res, next) => {
     (error) => {
       res.send({
         status: 500,
-        message: "Something went wrong",
+        message: "Something went wrong!",
         data: error,
       });
     }
   );
 };
 
-exports.addTicket = async (req, res, next) => {
+exports.addTicket = (req, res, next) => {
   let body = req.body;
 
   console.log(body);
@@ -66,14 +66,14 @@ exports.addTicket = async (req, res, next) => {
     (result) => {
       res.send({
         status: 200,
-        message: "Add ticket with success",
+        message: "Add ticket with success!",
         data: result,
       });
     },
     (error) => {
       res.send({
         status: 500,
-        message: "Something went wrong",
+        message: "Something went wrong!",
         data: error,
       });
     }
@@ -88,14 +88,14 @@ exports.deleteTicket = (req, res, next) => {
     () => {
       res.send({
         status: 200,
-        message: "Delete ticket with success",
+        message: "Delete ticket with success!",
         data: null,
       });
     },
     (error) => {
       res.send({
         status: 500,
-        message: "Something went wrong",
+        message: "Something went wrong!",
         data: error,
       });
     }
@@ -120,16 +120,17 @@ exports.updateTicket = (req, res, next) => {
     .then(
       async () => {
         let updatedTicket = await ticketModel.find({ _id: ticketId });
+
         res.send({
           status: 200,
-          message: "Update ticket with success",
+          message: "Update ticket with success!",
           data: updatedTicket[0],
         });
       },
       (error) => {
         res.send({
-          status: 500,
-          message: "Something went wrong",
+          status: 200,
+          message: "Something went wrong!",
           data: error,
         });
       }
