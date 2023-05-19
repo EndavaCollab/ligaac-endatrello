@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { IColumn } from '../shared';
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-
 export class DashboardComponent {
   columns: IColumn[] = [
     {

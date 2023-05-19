@@ -1,40 +1,39 @@
-const mongoose = require('mongoose');
-const ticketModel = require('./model/ticket.model');
+const mongoose = require("mongoose");
+
+const ticketModel = require("./model/ticket.model");
 
 exports.getAllTickets = (req, res, next) => {
-    res.send("GET method for all tickets.");
-}
+  res.send("Get Method for Tickets");
+};
 
-exports.getTicketById = (req, res, next) => {
-    res.send("GET method for a single ticket.");
-}
+exports.getById = (req, res, next) => {
+  res.send("Get By Id Method for Ticket");
+};
 
-exports.addTicket = (req, res, next) => {
-    let body = req.body;
+exports.addTicket = async (req, res, next) => {
+  let body = req.body;
 
-    console.log(body);
+  console.log(body);
 
-    const ticket = new ticketModel({
-        _id: new mongoose.Types.ObjectId(),
-        title: body.title,
-        description: body.description,
-    })
+  const ticket = new ticketModel({
+    _id: new mongoose.Types.ObjectId(),
+    title: body.title,
+    description: body.description,
+  });
 
-    ticket.save().then(() => {
-        console.log("Ticket saved.");
-    });
+  await ticket.save();
 
-    res.send("POST method for a ticket.");
-}
+  res.send("Add Method for Ticket");
+};
 
 exports.deleteTicket = (req, res, next) => {
-    res.send("DELETE method for a ticket.");
-}
+  res.send("Delete Method for Ticket");
+};
 
 exports.updateTicket = (req, res, next) => {
-    res.send("PUT method for a ticket.");
-}
+  res.send("Update Method for Ticket");
+};
 
 exports.patchTicket = (req, res, next) => {
-    res.send("PATCH method for a ticket.");
-}
+  res.send("Patch Method for Ticket");
+};
