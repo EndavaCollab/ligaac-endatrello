@@ -14,15 +14,15 @@ export class DashboardComponent {
     },
     {
       title: 'In progress',
-      tickets: [{ name: 'TicketA' }, { name: 'TicketB' }],
+      tickets: [],
     },
     {
       title: 'In testing',
-      tickets: [{ name: 'TicketA' }],
+      tickets: [],
     },
     {
       title: 'Done',
-      tickets: [{ name: 'TicketA' }],
+      tickets: [],
     },
   ];
 }

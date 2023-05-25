@@ -10,6 +10,6 @@ export class TicketCardComponent {
   @Input() ticket: ITicket = { name: '' };
 
   onEdit() {
-    console.log('Edit button');
+    console.log('edit button');
   }
 }
