@@ -6,33 +6,24 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-@NgModule({
-  declarations: [ColumnComponent, TicketCardComponent],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-  ],
-  exports: [
-    CommonModule,
-    ColumnComponent,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-  ],
-})
-export class SharedModule {}
+import { AddEditTicketComponent } from './add-edit-ticket/add-edit-ticket.component';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [ColumnComponent, TicketCardComponent],
+  declarations: [ColumnComponent, TicketCardComponent, AddEditTicketComponent],
   imports: [
     CommonModule,
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDialogModule
   ],
   exports: [
     CommonModule,
