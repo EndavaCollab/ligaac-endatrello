@@ -8,8 +8,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AddEditTicketComponent } from './add-edit-ticket/add-edit-ticket.component';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [ColumnComponent, TicketCardComponent, AddEditTicketComponent],
@@ -20,8 +21,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatIconModule,
     MatButtonModule,
     FormsModule,
+    MatFormFieldModule,
     MatInputModule,
-    MatFormFieldModule
+    MatDialogModule
   ],
   exports: [
     CommonModule,
@@ -29,6 +31,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule
   ],
 })
 export class SharedModule {}

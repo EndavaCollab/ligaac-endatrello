@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { IColumn, ITicket } from '../shared';
-import { TicketService } from '../service/ticket.service';
-import { Status } from '../shared/model/status';
-import { MatDialog } from '@angular/material/dialog';
 import { AddEditTicketComponent } from '../shared/add-edit-ticket/add-edit-ticket.component';
+import { Status } from '../shared/model/status';
+import { TicketService } from '../ticket.service';
 
 const cleanColumns = [
   {
