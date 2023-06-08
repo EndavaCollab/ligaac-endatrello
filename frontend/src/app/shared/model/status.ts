@@ -1,6 +1,6 @@
 export enum Status {
   'To Do',
   'In progress',
-  'In testing',
+  'In Testing',
   'Done',
 }

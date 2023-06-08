@@ -42,9 +42,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.ticketService.getAllTickets().subscribe((values) => {
-      values.data.forEach((item: any) =>
-        this.columns[item.status]?.tickets.push(item)
-      );
+      values.data.forEach((item: any) => {
+        this.columns[item.status]?.tickets.push(item);
+      });
     });
   }
 
