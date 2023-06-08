@@ -7,7 +7,7 @@ import { ITicket } from '../interfaces';
   styleUrls: ['./ticket-card.component.scss'],
 })
 export class TicketCardComponent {
-  @Input() ticket: ITicket = { name: '' };
+  @Input() ticket: ITicket = { title: '' };
 
   onEdit() {
     console.log('edit button');
