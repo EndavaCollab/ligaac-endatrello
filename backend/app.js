@@ -3,6 +3,7 @@ const app = express();
 
 const bodyParser = require("body-parser");
 const databaseCondig = require("./configs/db");
+const cors = require("cors");
 
 app.disable("x-powered-by");
 
@@ -18,6 +19,9 @@ app.use((res, req, next) => {
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
 
+  cors({
+    origin: "*"
+  })
   if (req.method === "OPTIONS") {
     res.header(
       "Access-Controll-Allow-Methods",
@@ -29,6 +33,9 @@ app.use((res, req, next) => {
   next();
 });
 
+app.use(cors({
+  origin: "*"
+}));
 databaseCondig.connect();
 
 const ticketRoute = require("./tickets/route");
