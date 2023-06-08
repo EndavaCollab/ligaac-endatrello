@@ -20,8 +20,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    MatFormFieldModule,
     MatInputModule,
+    MatFormFieldModule,
   ],
   exports: [
     CommonModule,

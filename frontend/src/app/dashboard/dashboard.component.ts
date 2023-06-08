@@ -1,6 +1,6 @@
-import { TicketService } from './../service/ticket.service';
 import { Component, OnInit } from '@angular/core';
 import { IColumn } from '../shared';
+import { TicketService } from '../service/ticket.service';
 import { Status } from '../shared/model/status';
 import {
   MatDialog,
@@ -47,6 +47,7 @@ export class DashboardComponent implements OnInit {
       });
     });
   }
+
   add() {
     const modalRef = this.dialogService.open(AddEditTicketComponent, {});
   }
