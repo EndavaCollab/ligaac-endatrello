@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const cors = require("cors");
 
 const bodyParser = require("body-parser");
 const databaseCondig = require("./configs/db");
@@ -31,7 +30,7 @@ app.use((res, req, next) => {
   next();
 });
 
-app.use(cors({origin: '*'}));
+app.use(cors({origin:'*'}));
 
 databaseCondig.connect();
 

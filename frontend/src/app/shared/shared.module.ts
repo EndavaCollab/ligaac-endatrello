@@ -14,7 +14,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [ColumnComponent, TicketCardComponent, AddEditTicketComponent],
-  declarations: [ColumnComponent, TicketCardComponent, AddEditTicketComponent],
   imports: [
     CommonModule,
     MatCardModule,

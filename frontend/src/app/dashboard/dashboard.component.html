@@ -11,6 +11,6 @@
 </p>
 <div class="container">
   <div *ngFor="let column of columns">
-    <app-column [title]="column.title" [tickets]="column.tickets"></app-column>
+    <app-column [title]="column.title" [tickets]="column.tickets" (onChange)="refresh()"></app-column>
   </div>
 </div>

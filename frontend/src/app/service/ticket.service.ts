@@ -8,11 +8,15 @@ import { ITicket } from '../shared';
 })
 export class TicketService {
 
-  backendUrl = 'http://localhost:2323/'
+  backendUrl = 'http://localhost:2323'
 
   constructor(private httpClient: HttpClient) { }
 
   getAllTickets(): Observable<any> {
-    return this.httpClient.get(this.backendUrl + 'tickets');
+    return this.httpClient.get(`${this.backendUrl}/tickets`);
+  }
+
+  updateTicket(id: any, ticket: Omit<ITicket, '_id'>): Observable<any> {
+    return this.httpClient.put(`${this.backendUrl}/tickets/${id}`, ticket);
   }
 }
