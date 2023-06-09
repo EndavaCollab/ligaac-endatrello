@@ -3,7 +3,11 @@
     <mat-toolbar-row>
       <span>Endatrello</span>
       <span class="spacer"></span>
-      <button mat-icon-button aria-label="Example icon-button with menu icon">
+      <button
+        mat-icon-button
+        aria-label="Example icon-button with menu icon"
+        (click)="add()"
+      >
         <mat-icon>add</mat-icon>
       </button>
     </mat-toolbar-row>
@@ -11,6 +15,10 @@
 </p>
 <div class="container">
   <div *ngFor="let column of columns">
-    <app-column [title]="column.title" [tickets]="column.tickets"></app-column>
+    <app-column
+      [title]="column.title"
+      [tickets]="column.tickets"
+      (onChange)="refresh()"
+    ></app-column>
   </div>
 </div>

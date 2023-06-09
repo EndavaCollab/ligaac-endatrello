@@ -5,6 +5,7 @@ const ticketSchema = mongoose.Schema({
   title: { type: String },
   description: { type: String, default: "No description" },
   createdAt: { type: Date, default: Date.now() },
+  status: { type: Number, default: 0 },
 });
 
 module.exports = mongoose.model("ticket", ticketSchema);

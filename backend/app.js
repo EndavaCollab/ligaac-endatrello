@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 const bodyParser = require("body-parser");
 const databaseCondig = require("./configs/db");
@@ -29,6 +30,12 @@ app.use((res, req, next) => {
   next();
 });
 
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 databaseCondig.connect();
 
 const ticketRoute = require("./tickets/route");
@@ -42,6 +49,16 @@ app.get("/", (req, res) => {
   console.log(emailParam);
 
   res.send("Hello World! Welcome to our page, " + nameParam);
+});
+
+app.get("/maria", (req, res) => {
+  let nameParam = req.query.name;
+  let emailParam = req.query.email;
+
+  console.log(nameParam);
+  console.log(emailParam);
+
+  res.send("Hello World! Welcome to our page, " + nameParam + emailParam);
 });
 
 app.listen(2323, () => {
