@@ -3,5 +3,6 @@
   <app-ticket-card
     *ngFor="let ticket of tickets"
     [ticket]="ticket"
+    (onChange)="forward($event)"
   ></app-ticket-card>
 </div>
