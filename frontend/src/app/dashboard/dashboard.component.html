@@ -18,7 +18,7 @@
     <app-column
       [title]="column.title"
       [tickets]="column.tickets"
-      (onChange)="refresh()"
+      (onChange)="refresh($event)"
     ></app-column>
   </div>
 </div>

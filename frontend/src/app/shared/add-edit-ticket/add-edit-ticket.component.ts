@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-edit-ticket',
   templateUrl: './add-edit-ticket.component.html',
   styleUrls: ['./add-edit-ticket.component.scss'],
 })
-export class AddEditTicketComponent {}
+export class AddEditTicketComponent {
+  addEditForm: FormGroup = new FormGroup({
+    title: new FormControl(null, Validators.required),
+    description: new FormControl(null, Validators.required),
+  });
+}

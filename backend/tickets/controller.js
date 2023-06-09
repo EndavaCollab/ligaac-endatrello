@@ -60,6 +60,7 @@ exports.addTicket = (req, res, next) => {
     _id: new mongoose.Types.ObjectId(),
     title: body.title,
     description: body.description,
+    status: body.status,
   });
 
   ticket.save().then(
@@ -114,6 +115,7 @@ exports.updateTicket = (req, res, next) => {
           _id: ticketId,
           title: req.body.title,
           description: req.body.description,
+          status: req.body.status,
         },
       }
     )

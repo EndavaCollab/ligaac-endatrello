@@ -1,15 +1,27 @@
 <mat-card>
   <mat-card-content>
-    <mat-card-title>{{ ticket.title }}</mat-card-title>
+    <mat-card-title
+      >{{ ticket.title
+      }}<button>
+        <mat-icon fontIcon="delete" (click)="onDelete()"></mat-icon></button
+    ></mat-card-title>
     <mat-card-subtitle>{{ ticket.description }}</mat-card-subtitle>
   </mat-card-content>
-  <mat-card-actions align="space-around">
-    <button *ngIf="ticket.status !== 0" mat-button (click)="onMoveBackwards()">
+  <mat-card-actions>
+    <button
+      *ngIf="ticket.status !== 0"
+      mat-raised-button
+      (click)="onMoveBackwards()"
+    >
       <mat-icon fontIcon="arrow_back"></mat-icon>
     </button>
-    <button *ngIf="ticket.status !== 3" mat-button (click)="onMoveForward()">
+    <button
+      *ngIf="ticket.status !== 3"
+      mat-raised-button
+      (click)="onMoveForward()"
+    >
       <mat-icon fontIcon="arrow_forward"></mat-icon>
     </button>
-    <button mat-button (click)="onEdit()">Edit</button>
+    <button mat-raised-button (click)="onEdit()">Edit</button>
   </mat-card-actions>
 </mat-card>
