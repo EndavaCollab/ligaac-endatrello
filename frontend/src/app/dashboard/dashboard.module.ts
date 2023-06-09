@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from '../shared';
-import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [DashboardComponent],

@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DashboardModule,
     CommonModule,
     HttpClientModule
   ],
