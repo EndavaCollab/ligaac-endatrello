@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { ITicket } from '../shared';
 
@@ -8,12 +8,11 @@ import { ITicket } from '../shared';
 })
 export class TicketService {
 
-  url = 'http://localhost:2323/';
+  backendUrl = 'http://localhost:2323/'
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllTickets(): Observable<any>
-  {
-    return this.httpClient.get(this.url + 'tickets');
+  getAllTickets(): Observable<any> {
+    return this.httpClient.get(this.backendUrl + 'tickets');
   }
 }

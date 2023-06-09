@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IColumn } from '../shared';
-import { TicketService } from '../service/ticket.service';
-import { Status } from '../shared/model/status';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { TicketService} from '../service/ticket.service'
+import { Status } from '../shared/model/status'
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { AddEditTicketComponent } from '../shared/add-edit-ticket/add-edit-ticket.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -31,15 +32,21 @@ export class DashboardComponent implements OnInit {
     },
   ];
 
-  constructor(private ticketService: TicketService, private dialogService: MatDialog) { }
+  constructor(private ticketService: TicketService,
+              private dialogService: MatDialog) {}
 
   ngOnInit(): void {
-      this.ticketService.getAllTickets().subscribe((values) => {
-        values.data.forEach((item: any)=> {
-          this.columns[item.status].tickets.push(item);
-        });
-      });
+    this.ticketService.getAllTickets().subscribe((values) => {
+     values.data.forEach((item: any) => {
+      this.columns[item.status]?.tickets.push(item);
+     });
+    });
   }
+
+  add() {
+    const modalRef = this.dialogService.open(AddEditTicketComponent,{})
+  }
+}
 
   add() {
     const modalRef = this.dialogService.open(AddEditTicketComponent);
