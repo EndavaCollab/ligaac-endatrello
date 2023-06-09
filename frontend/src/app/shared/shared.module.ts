@@ -8,9 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AddEditTicketComponent } from './add-edit-ticket/add-edit-ticket.component';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [ColumnComponent, TicketCardComponent, AddEditTicketComponent],
@@ -21,9 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    MatFormFieldModule,
     MatInputModule,
-    MatDialogModule,
+    MatFormFieldModule
   ],
   exports: [
     CommonModule,

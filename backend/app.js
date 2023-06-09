@@ -30,7 +30,7 @@ app.use((res, req, next) => {
   next();
 });
 
-app.use(cors({ origin: "*" }));
+app.use(cors({origin:'*'}));
 
 databaseCondig.connect();
 
