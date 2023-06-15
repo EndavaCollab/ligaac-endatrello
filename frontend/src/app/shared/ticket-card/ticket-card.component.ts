@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ITicket } from '../interfaces';
+import { TicketService } from 'src/app/service/ticket.service';
 
 @Component({
   selector: 'app-ticket-card',
@@ -7,7 +8,9 @@ import { ITicket } from '../interfaces';
   styleUrls: ['./ticket-card.component.scss'],
 })
 export class TicketCardComponent {
-  @Input() ticket: ITicket = { title: '' };
+  @Input() ticket: ITicket = { title: '', description: '' };
+
+  constructor(private ticketService: TicketService){}
 
   onEdit() {
     console.log('edit button');

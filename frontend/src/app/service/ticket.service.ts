@@ -15,4 +15,10 @@ export class TicketService {
   getAllTickets(): Observable<any> {
     return this.httpClient.get(this.backendUrl + 'tickets');
   }
+
+  updateTicket(id: string, ticket: Omit<ITicket, '_id'>): Observable<any> {
+    return this.httpClient.get(this.backendUrl + 'tickets' + `${id}`);
+  }
+
+
 }
