@@ -60,10 +60,6 @@ export class DashboardComponent implements OnInit {
     this.refresh(undefined);
   }
 
-  ngOnInit(): void {
-    this.refresh();
-  }
-
   add() {
     const modalRef = this.dialogService.open(AddEditTicketComponent, {});
   }

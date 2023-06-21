@@ -22,8 +22,4 @@ export class TicketService {
   deleteTicket(id: string): Observable<any> {
     return this.httpClient.delete(`${this.backendUrl}/tickets/${id}`);
   }
-
-  updateTicket(id: string, ticket: Omit<ITicket, '_id'>): Observable<any> {
-    return this.httpClient.put(this.backendUrl + 'tickets/' + id, ticket);
-  }
 }
