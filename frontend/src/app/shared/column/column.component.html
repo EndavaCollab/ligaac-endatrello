@@ -3,5 +3,6 @@
   <app-ticket-card
     *ngFor="let ticket of tickets"
     [ticket]="ticket"
+    (onChange)="onChange.emit()"
   ></app-ticket-card>
 </div>

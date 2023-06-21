@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITicket } from '../interfaces';
 
 @Component({
@@ -9,4 +9,5 @@ import { ITicket } from '../interfaces';
 export class ColumnComponent {
   @Input() title: string = '';
   @Input() tickets: ITicket[] = [];
+  @Output() onChange: EventEmitter<any> = new EventEmitter();
 }
