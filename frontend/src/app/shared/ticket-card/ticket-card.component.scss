@@ -6,10 +6,13 @@ mat-card {
   }
 }
 
-.all-buttons {
+mat-card-actions {
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
-.move-buttons {
-  justify-content: center;
+mat-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

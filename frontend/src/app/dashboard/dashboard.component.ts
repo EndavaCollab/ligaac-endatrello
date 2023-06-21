@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IColumn } from '../shared';
+import { IColumn, ITicket } from '../shared';
 import { TicketService } from '../service/ticket.service';
 import { Status } from '../shared/model/status';
-import {
-  MatDialog,
-  MAT_DIALOG_DATA,
-  MatDialogRef,
-  MatDialogModule,
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { AddEditTicketComponent } from '../shared/add-edit-ticket/add-edit-ticket.component';
 
 const cleanColumns = [
@@ -42,14 +37,27 @@ export class DashboardComponent implements OnInit {
     private dialogService: MatDialog
   ) {}
 
-  refresh(): void {
-    this.columns = structuredClone(cleanColumns);
-
-    this.ticketService.getAllTickets().subscribe((values) => {
-      values.data.forEach((item: any) => {
-        this.columns[item.status]?.tickets.push(item);
+  refresh(ticket?: ITicket): void {
+    if (ticket) {
+      this.columns = this.columns.map((column) => {
+        const newTickets = column.tickets.filter(
+          (item) => item._id !== ticket._id
+        );
+        return { title: column.title, tickets: newTickets };
       });
-    });
+      this.columns[ticket.status || 0]?.tickets.push(ticket);
+    } else {
+      this.columns = structuredClone(cleanColumns);
+      this.ticketService.getAllTickets().subscribe((values) => {
+        values.data.forEach((item: any) => {
+          this.columns[item.status]?.tickets.push(item);
+        });
+      });
+    }
+  }
+
+  ngOnInit(): void {
+    this.refresh(undefined);
   }
 
   ngOnInit(): void {

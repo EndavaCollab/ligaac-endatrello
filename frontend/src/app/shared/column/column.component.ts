@@ -10,4 +10,8 @@ export class ColumnComponent {
   @Input() title: string = '';
   @Input() tickets: ITicket[] = [];
   @Output() onChange: EventEmitter<any> = new EventEmitter();
+
+  forward(thing: ITicket) {
+    this.onChange.emit(thing);
+  }
 }

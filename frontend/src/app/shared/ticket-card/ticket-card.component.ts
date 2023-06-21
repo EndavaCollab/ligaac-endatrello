@@ -17,16 +17,8 @@ export class TicketCardComponent {
     console.log('edit button');
   }
 
-  onMoveForward() {
-    this.onMoveTicket('forward');
-  }
-
-  onMoveBackwards() {
-    this.onMoveTicket('backwards');
-  }
-
-  onMoveTicket(direction: 'forward' | 'backwards') {
-    const step = (direction === 'forward' ? 1 : -1);
+  moveTicket(direction: 'forwards' | 'backwards') {
+    const step = direction === 'forwards' ? 1 : -1;
     const newStatus =
       this.ticket.status === undefined ? 0 : this.ticket.status + step;
     const { title, description } = this.ticket;
@@ -36,8 +28,22 @@ export class TicketCardComponent {
         description: description,
         status: newStatus,
       })
-      .subscribe(() => {
-        this.onChange.emit();
+      .subscribe((ticket) => {
+        this.onChange.emit(ticket.data);
       });
+  }
+
+  onMoveForward() {
+    this.moveTicket('forwards');
+  }
+
+  onMoveBackwards() {
+    this.moveTicket('backwards');
+  }
+
+  onDelete() {
+    this.ticketService
+      .deleteTicket(this.ticket._id)
+      .subscribe(() => this.onChange.emit());
   }
 }
