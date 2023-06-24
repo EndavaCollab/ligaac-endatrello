@@ -4,7 +4,6 @@ const cors = require("cors");
 
 const bodyParser = require("body-parser");
 const databaseCondig = require("./configs/db");
-const cors = require("cors");
 
 app.disable("x-powered-by");
 
